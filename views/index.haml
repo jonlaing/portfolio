@@ -16,7 +16,7 @@
                   .modal-header
                     %a.close(data-dismiss="modal") x
                     %h3= get_title(item.image_description)
-                  .modal-body= remove_title(item.image_description)
+                  .modal-body= markdown remove_title(item.image_description)
       %a(class="left carousel-control"
          data-slide="prev"
          href="#portfolio") &lsaquo;
