@@ -109,7 +109,7 @@ post '/contact' do
     :from => params[:name] + "<" + params[:email] + ">",
     :to => 'info@jonlaing.com',
     :subject => params[:name] + " has contacted you",
-    :body => [params[:name],params[:email],params[:company],params[:phone],"",params[:message]].join("\n"),
+    :body => [params[:name],params[:email],params[:company],params[:phone],"",params[:message]].join("\n\n"),
     :port => '587',
     :via => :smtp,
     :via_options => { 
@@ -152,7 +152,8 @@ helpers do
   end
   
   def remove_title(text)
-    text.gsub(/^([#|h1\.].+$)|^.+\n=+$/,'')
+    desc = text.gsub(/^([#|h1\.].+$)|^.+\n=+$/,'')
+    "No description available" if desc.length < 2
   end
 
   def dropdown_from_yaml(yaml)
