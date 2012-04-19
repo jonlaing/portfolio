@@ -3,12 +3,7 @@ jQuery(function($) {
 	$('.dropdown-toggle').dropdown();
         $('.carousel').carousel();
 
-  $('.modal').bind('show', function () {
-    $('.carousel').carousel('pause');
-  }).bind('hide', function () {
-    $('.carousel').carousel('cycle');
-  });
-
+  $('.carousel').carousel('pause');
 	$('.carousel').bind('slide', function () {
 		resize_image_info();
 	});
