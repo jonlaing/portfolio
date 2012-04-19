@@ -6,6 +6,7 @@ body {padding: 60px 0 0; background: #eee}
 #portfolio .item > div {margin: 5px auto; position: relative;text-align: center}
 #portfolio .item img, #portfolio .carousel-caption { max-width: 100%; height: auto; max-height: 500px; }
 #portfolio .carousel-caption { padding: 10px 15px 5px; background-color: rgba(0,0,0,0.65); text-align: left; margin: 0 auto;}
+#portfolio .modal {text-align: left;}
 
 .box-shadow {
   -webkit-box-shadow: 0px 3px 6px 0px #666; /* Saf3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
