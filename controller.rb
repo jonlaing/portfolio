@@ -9,10 +9,12 @@ require 'sinatra/partial'
 require 'exifr'
 require 'aws/s3'
 
+include AWS::S3
+
 #############################################
 #              Configuration                #
 #############################################
-#
+
 set :public_folder, File.dirname(__FILE__) + '/assets/'
 enable :partial_underscores
 
@@ -67,7 +69,7 @@ get '/' do
       @images.push image
     end
   else
-    AWS::S3::Base.establish_connection!(
+    Base.establish_connection!(
       access_key_id: settings.s3_key,
       secret_access_key: settings.s3_secret
     )
