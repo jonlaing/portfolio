@@ -148,12 +148,13 @@ helpers do
   end
 
   def get_title(text)
-    text.match(/^([#|h1\.].+$)|^.+\n=+$/)[0]
+    text.match(/^([#|h1\.].+$)|^.+\n=+$/)[0].gsub(/^([#|h1\.])|\n=+$/,'')
   end
   
   def remove_title(text)
     desc = text.gsub(/^([#|h1\.].+$)|^.+\n=+$/,'')
-    "No description available" if desc.length < 2
+    return "No description available" if desc.length < 2
+    desc
   end
 
   def dropdown_from_yaml(yaml)
