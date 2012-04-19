@@ -77,7 +77,10 @@ get '/' do
     @portfolio_dir = Bucket.find(settings.bucket)
     
     @portfolio_dir.objects.each do |file|
-      image = EXIFR::JPEG.new(file.url)
+      r,w = IO.pipe
+      w.write_nonblock(file.value)
+
+      image = EXIFR::JPEG.new(r)
       image.src = file.url
       image.name = file.key.gsub(/\..+$/,'')
       @images.push image
