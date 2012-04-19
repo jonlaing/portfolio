@@ -6,6 +6,7 @@ jQuery(function($) {
   $('.carousel').carousel('pause');
 	$('.carousel').bind('slide', function () {
 		resize_image_info();
+    $('.carousel').carousel('pause');
 	});
 
 	resize_image_info();
