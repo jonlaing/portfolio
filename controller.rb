@@ -148,11 +148,11 @@ helpers do
   end
 
   def get_title(text)
-    text.match(/^([#{1,}|h1\.].+$)|^.+\n=+$/)[0].gsub(/^([#|h1\.])|\n=+$/,'')
+    text.match(/^([#|h1\.]{1,}.+$)|^.+\n=+$/)[0].gsub(/^([#|h1\.])|\n=+$/,'')
   end
   
   def remove_title(text)
-    desc = text.gsub(/^([#i{1,}|h1\.].+$)|^.+\n=+$/,'')
+    desc = text.gsub(/^([#|h1\.]{1,}.+$)|^.+\n=+$/,'')
     return "No description available" if desc.length < 2
     desc
   end
