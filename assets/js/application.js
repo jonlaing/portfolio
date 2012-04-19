@@ -1,7 +1,7 @@
 jQuery(function($) {
         $('.carousel .item').first().addClass('active');
 	$('.dropdown-toggle').dropdown();
-        $('.carousel').carousel( { interval: false } );
+        $('.carousel').carousel( { pause: true, interval: 5000000000 } );
 
 	$('.carousel').bind('slide', function () {
 		resize_image_info();
