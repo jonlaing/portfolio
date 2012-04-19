@@ -1,0 +1,45 @@
+!!! 5
+%html
+  %head
+    %title= "#{t.global.title} | #{@title}" 
+    %link{:href => "bootstrap/css/bootstrap.min.css", :type => "text/css", :rel => "stylesheet"}
+    %link{:href => "style/application.css", :type => "text/css", :rel => "stylesheet"}/
+    %link{:href => "bootstrap/css/bootstrap-responsive.min.css", :type => "text/css", :rel => "stylesheet"}/
+  %body
+    %header
+      .navbar.navbar-fixed-top
+        .navbar-inner
+          .container
+            %h1= link_to t.global.title, "/", :class => 'brand', :id => 'logo'
+            %nav.nav-collapse
+              %ul.nav
+                %li{:class => params[:page].nil? ? "active" : ""}= link_to "Portfolio", "/"
+                %li{:class => params[:page] == "about" ? "active" : "" }= link_to "About", "about"
+                %li{:class => params[:page] == "contact" ? "active" : ""}= link_to "Contact", "contact"
+                %li= link_to "Blog", t.global.blogurl
+                %li= link_to "Store", "http://society6.com/JonLaing/prints"
+              %ul.nav.pull-right
+                %li.dropdown
+                  %a.dropdown-toggle(data-toggle="dropdown"
+                                      href="#")
+                    Follow Me
+                    %b.caret
+                  %ul.dropdown-menu= dropdown_from_yaml(t.global.sociallinks)
+
+    .container
+      = yield
+      %footer
+        %p.pull-right
+          %a{:href => "http://jonlaing.tumblr.com"}
+            %img{:src => "img/social_icons/16/tumblr.png"}
+          %a{:href => "http://twitter.com/jonlaingstudios"}
+            %img{:src => "img/social_icons/16/twitter.png"}
+          %a{:href => "http://www.linkedin.com/in/jonlaing"}
+            %img{:src => "img/social_icons/16/linkedin.png"}
+          %a{:href => "http://www.behance.net/jonlaing"}
+            %img{:src => "img/social_icons/16/behance.png"}
+        %p= t.global.copyright
+
+    %script{:src => "js/jquery-1.7.2.min.js", :type => "text/javascript"}
+    %script{:src => "bootstrap/js/bootstrap.min.js", :type => "text/javascript"}
+    %script{:src => "js/application.js", :type => "text/javascript"}
