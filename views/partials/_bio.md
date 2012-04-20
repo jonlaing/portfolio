@@ -29,7 +29,7 @@ In 2011, after kicking his self-esteem addiction \[[2](#citation)\], Laing was r
 
 <a id="citation"></a>
 
-1. It is widely accepted by historians and anthropologists that Gary Coleman was a myth perpetrated by "9/11 truthers" and "ancient alient theorists" \[[3](#citation)\].
+1. It is widely accepted by historians and anthropologists that Gary Coleman was a myth perpetuated by "9/11 truthers" and "ancient alient theorists" \[[3](#citation)\].
 
 2. Laing has been known many times to relapse back into self-esteem, but his friends and family do their best to quell the addiction as soon as they notice.
 
