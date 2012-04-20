@@ -5,7 +5,7 @@
         - @images.each_with_index do |item|
           .item
             %div
-              %img.box-shadow{:src => item.src, :title => item.image_description}
+              %img.box-shadow{:src => item.src, :title => get_title(item.image_description)}
               - unless item.image_description.nil?
                 .carousel-caption
                   .pull-right

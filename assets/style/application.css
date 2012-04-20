@@ -1,9 +1,9 @@
 body {padding: 60px 0 0; background: #eee}
 #portfolio {max-height: 550px; }
-#portfolio .carousel-inner {height: 100%,overflow-y: visible;padding-bottom: 10px;}
+#portfolio .carousel-inner {height: 100%,overflow-y: visible;padding-bottom: 0px;}
 /*#portfolio .item img {  border: 5px solid white; }*/
 
-#portfolio .item > div {margin: 5px auto; position: relative;text-align: center; padding: 51px;}
+#portfolio .item > div {margin: 5px auto; position: relative;text-align: center; padding-bottom: 51px;}
 #portfolio .item img, #portfolio .carousel-caption { max-width: 100%; height: auto; max-height: 500px; }
 #portfolio .carousel-caption {  padding: 10px 15px 5px; background-color: rgba(0,0,0,1); text-align: left; margin: 0 auto;}
 #portfolio .modal {text-align: left;}
