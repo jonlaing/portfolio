@@ -1,5 +1,5 @@
 body {padding: 60px 0 0; background: #eee}
-#portfolio {height: 600px; }
+#portfolio {max-height: 550px; }
 #portfolio .carousel-inner {height: 100%,overflow-y: visible;padding-bottom: 10px;}
 /*#portfolio .item img {  border: 5px solid white; }*/
 
