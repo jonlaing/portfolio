@@ -1,10 +1,12 @@
 jQuery(function($) {
 
-  $('.carousel .item').first().addClass('active');
+	$('.carousel .item').first().addClass('active');
 	$('.dropdown-toggle').dropdown();
-  $('.carousel').carousel( { pause: true, interval: 5000000000 } );
+	$('.carousel').carousel( { pause: true, interval: 5000000000 } );
 
-	resize_image_info();
+	$(document).ready(function() {
+		resize_image_info();
+	});
 
 	$('.carousel').bind('slide', function () {
 		resize_image_info();
