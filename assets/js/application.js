@@ -12,7 +12,10 @@ jQuery(function($) {
 		resize_image_info();
 	});
 
-	resize_image_info();
+	$('.carousel .active').each(function () {
+		width = $(this).find('img').width();
+		$(this).find('.carousel-caption').css('max-width', (width-30)+'px');
+	});
 
 	function resize_image_info() {
 		$('.carousel-caption').each(function () {
