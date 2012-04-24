@@ -21,7 +21,7 @@ enable :partial_underscores
 # Email
 set :email_username, ENV['SENDGRID_USERNAME'] || ENV['EMAIL_USERNAME']
 set :email_password, ENV['SENDGRID_PASSWORD'] || ENV['EMAIL_PASSWORD']
-set :email_address, 'info@jonlaing.com'
+set :email_address, 'jon.dreaux.laing@gmail.com'
 set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
 set :email_domain, ENV['SENDGRID_DOMAIN'] || 'localhost.localdomain'
 
