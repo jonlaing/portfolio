@@ -130,7 +130,7 @@ end
 
 helpers do
   def link_to(text, where = "#", opts = {})
-    options = opts.map {|k,v| "#{k}=\"#{v}\"" }.join
+    options = opts.map {|k,v| "#{k}=\"#{v}\"" }.join(" ")
     "<a href=\"#{where}\" #{options}>#{text}</a>"
   end
 
