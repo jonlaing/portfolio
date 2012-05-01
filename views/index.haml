@@ -11,7 +11,7 @@
                   .pull-right
                     %a(data-toggle="modal"){:href=> "##{item.name}"}
                       %i.icon-info-sign.icon-white
-                  %p= markdown get_title(item.image_description)
+                  %p= get_title(item.image_description)
                 .modal.hide.fade.in{:id => item.name}
                   .modal-header
                     %a.close(data-dismiss="modal") x
