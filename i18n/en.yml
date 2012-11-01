@@ -4,11 +4,14 @@ global:
   sociallinks:
     - "[Tumblr](http://jonlaing.tumblr.com)"
     - "[Twitter](http://twitter.com/jonlaingstudios)"
+    - "[Facebook](https://www.facebook.com/jonlaingstudios)"
     - "[LinkedIn](http://www.linkedin.com/in/jonlaing)"
     - "[Directory of Illustration](http://directoryofillustration.com/ArtistPortfolioThumbs.aspx?AID=6240)"
     - "[Behance](http://www.behance.net/jonlaing)"
     - "[Society6](http://society6.com/JonLaing)"
-    - "[DeviantArt](http://jonlaing.deviantart.com)"
+    - "[AltPick](http://altpick.com/jonlaing)"
+    - "[FoundFolios](http://www.foundfolios.com/Jon-Laing)"
+    - "[Pinterest](http://pinterest.com/jonlaing/)"
   blogurl: "http://jonlaing.tumblr.com"
 
 index:
@@ -19,3 +22,6 @@ about:
 
 contact:
   title: "Contact"
+
+success:
+  title: "Thanks"
