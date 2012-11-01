@@ -2,21 +2,10 @@
   .span12
     #portfolio.carousel.slide
       .carousel-inner
-        - @images.each_with_index do |item|
+        - @images.each do |item|
           .item
             %div
               %img.box-shadow{:src => item.src}
-              - unless item.image_description.nil?
-                .carousel-caption
-                  .pull-right
-                    %a(data-toggle="modal"){:href=> "##{item.name}"}
-                      %i.icon-info-sign.icon-white
-                  %p= get_title(item.image_description)
-                .modal.hide.fade.in{:id => item.name}
-                  .modal-header
-                    %a.close(data-dismiss="modal") x
-                    %h3= get_title(item.image_description)
-                  .modal-body= markdown remove_title(item.image_description)
       %a(class="left carousel-control"
          data-slide="prev"
          href="#portfolio") &lsaquo;

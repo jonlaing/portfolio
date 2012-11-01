@@ -1,12 +1,12 @@
 body {padding: 60px 0 0; background: #eee}
 #logo {display: inline-block; width: 200px; height: 0px; padding: 23px 0 0; margin: 8px 20px 12px 0; overflow: hidden; background: url('/img/logo.png') no-repeat;}
-#portfolio {max-height: 650px; }
+#portfolio {max-height: 600px; }
 #portfolio .carousel-inner {height: 100%,overflow-y: visible;padding-bottom: 0px;}
 /*#portfolio .item img {  border: 5px solid white; }*/
 
 #portfolio .item > div {margin: 5px auto; position: relative;text-align: center; padding-bottom: 51px;}
 #portfolio .item img, #portfolio .carousel-caption { max-width: 100%; height: auto; max-height: 600px; }
-#portfolio .carousel-caption {  padding: 10px 15px 5px; background-color: rgba(0,0,0,1); text-align: left; margin: 0 auto;}
+#portfolio .carousel-caption { display:none;  padding: 10px 15px 5px; background-color: rgba(0,0,0,1); text-align: left; margin: 0 auto;}
 #portfolio .modal {text-align: left;}
 
 .box-shadow {
