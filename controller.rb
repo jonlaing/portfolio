@@ -37,15 +37,6 @@ class MyApp < Sinatra::Base
   set :root, File.dirname(__FILE__)
 end
 
-Image = Struct.new(:src, :name, :image_description, :width, :height)
-
-module EXIFR
-  class JPEG
-    attr_accessor :src
-    attr_accessor :name
-  end
-end
-
 ###########################################
 #                 Routing                 #
 ###########################################
@@ -63,9 +54,7 @@ get '/' do
     Dir.entries(@portfolio_dir).each do |file|
       next unless file =~ /.+\.jpg/
       path = "#{@portfolio_dir}/#{file}"
-      image = EXIFR::JPEG.new(path)
-      image.src = "img/portfolio/#{file}"
-      image.name = "#{file.gsub(/\..+$/,'')}"
+      image = "img/portfolio/#{file}"
       @images.push image
     end
   else
@@ -77,12 +66,7 @@ get '/' do
     @portfolio_dir = Bucket.find(settings.bucket)
     
     @portfolio_dir.objects.each do |file|
-      r,w = IO.pipe
-      w.write_nonblock(file.value)
-
-      image = EXIFR::JPEG.new(r)
-      image.src = file.url
-      image.name = file.key.gsub(/\..+$/,'')
+      image = file.url
       @images.push image
     end
   end
