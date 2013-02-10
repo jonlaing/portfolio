@@ -5,7 +5,7 @@ body {padding: 60px 0 0; background: #eee}
 /*#portfolio .item img {  border: 5px solid white; }*/
 
 #portfolio .item > div {margin: 5px auto; position: relative;text-align: center; padding-bottom: 51px;}
-#portfolio .item img, #portfolio .carousel-caption { max-width: 100%; height: auto; max-height: 600px; }
+#portfolio .item img, #portfolio .carousel-caption, #portfolio .item #contact-form { max-width: 100%; height: auto; max-height: 600px; }
 #portfolio .carousel-caption { display:none;  padding: 10px 15px 5px; background-color: rgba(0,0,0,1); text-align: left; margin: 0 auto;}
 #portfolio .modal {text-align: left;}
 
@@ -38,3 +38,20 @@ body {padding: 60px 0 0; background: #eee}
 }
 
 .somethin { background: black; margin: 0 auto; padding: 15px; display: block; color: white; margin-top: -10px;}
+
+#contact-form {
+  display: inline-block;
+  text-align: left;
+  background: white;
+  padding: 20px;
+  width: 600px;
+  height: 560px !important;
+  position: relative;
+}
+
+#contact-form .form-actions {
+  position: absolute;
+  bottom: 0px;
+  width: 420px;
+}
+
