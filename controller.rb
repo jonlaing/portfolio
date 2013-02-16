@@ -89,23 +89,28 @@ post '/contact' do
   params[:company] ||= ""
   params[:phone] ||= ""
 
-  Pony.mail(
-    :from => params[:name] + "<" + params[:email] + ">",
-    :to => 'info@jonlaing.com',
-    :subject => params[:name] + " has contacted you",
-    :body => [params[:name],params[:email],params[:company],params[:phone],"",params[:message]].join("\n\n"),
-    :port => '587',
-    :via => :smtp,
-    :via_options => { 
-      :address              => 'smtp.'+ settings.email_service, 
-      :port                 => '587', 
-      :enable_starttls_auto => true, 
-      :user_name            => settings.email_username, 
-      :password             => settings.email_password, 
-      :authentication       => :plain, 
-      :domain               => settings.email_domain
-    })
-  redirect '/success' 
+  if params[:message] =~ /\<a/
+    @flash = "You can't include links in your message. Sorry, I get a lot of SPAM."
+    haml :contact, :layout => :layout
+  else
+    Pony.mail(
+      :from => params[:name] + "<" + params[:email] + ">",
+      :to => 'info@jonlaing.com',
+      :subject => params[:name] + " has contacted you",
+      :body => [params[:name],params[:email],params[:company],params[:phone],"",params[:message]].join("\n\n"),
+      :port => '587',
+      :via => :smtp,
+      :via_options => { 
+        :address              => 'smtp.'+ settings.email_service, 
+        :port                 => '587', 
+        :enable_starttls_auto => true, 
+        :user_name            => settings.email_username, 
+        :password             => settings.email_password, 
+        :authentication       => :plain, 
+        :domain               => settings.email_domain
+      })
+    redirect '/success' 
+  end
 end
 
 #########################################
