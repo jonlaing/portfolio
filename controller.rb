@@ -89,11 +89,11 @@ post '/contact' do
   params[:company] ||= ""
   params[:phone] ||= ""
 
-  if params[:message] =~ /\<a/
+  if params[:message] =~ /(\<a|\[url=)/
     @flash = "You can't include links in your message. Sorry, I get a lot of SPAM. If you're not trying to SPAM me, and links are essential to your message, try emailing directly at: info@jonlaing.com"
 
     haml :contact, :layout => :layout
-  elsif !params[:hp].blank?
+  elsif !params[:hp].blank? || params[:company] =~ /google/
     @flash = "Sorry, my SPAM blocker detected this as a SPAM message. If you're legitimately trying to contact me, try emailing me directly: info@jonlaing.com"
 
     haml :contact, :layout => :layout
