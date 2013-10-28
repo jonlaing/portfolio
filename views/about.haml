@@ -1,30 +1,3 @@
 .row
   #main-column.box-round.span8
-    .pull-right
-      %img{:src => "/img/bio.jpg", :width => 270, :height => 394}
-
     = partial(:"partials/bio", :template_engine => :markdown)
-
-  .span3
-    %h3 Colleagues
-
-    %ul.unstyled
-      %li= link_to "Miguel Co", "http://www.miguel-co.com/", :target => "_blank"
-      %li= link_to "Brit Derr", "http://britderr.com", :target => "_blank"
-      %li= link_to "Nicole DiPunchurface", "http://www.dipunchurface.com/", :target => "_blank"
-      %li= link_to "Kate Eagle", "http://www.thekateeagle.com/", :target => "_blank"
-      %li= link_to "Kacie Manzo", "http://kaciemanzo.com/", :target => "_blank"
-      %li= link_to "Alex Panetta", "http://www.alexpanetta.com/", :target => "_blank"
-      %li= link_to "Felicia Puff", "http://www.feliciapuff.com/", :target => "_blank"
-      %li= link_to "Chris Robertson", "http://www.chrisrobertsonart.com/", :target => "_blank"
-
-    %br/
-
-    %p
-      %a{:href => "http://directoryofillustration.com/", :target => "_blank"}
-        %img{:src => "/img/DI_124x86_4.jpg", :width => "124", :height => "86"}
-    %p
-      %a{:href => "http://altpick.com/jonlaing", :target => "_blank" }
-        %img{:alt => "Jon Laing on altpick.com", :src => "http://altpick.com/images/member_logos/alt_logo_black_md.gif", :width => "150", :height => "45", :border => "0"}
-
-

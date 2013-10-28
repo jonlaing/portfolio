@@ -2,3 +2,4 @@ assets/img/portfolio/*
 *.swp
 .rvmrc
 config.yml
+i18n/*.yml

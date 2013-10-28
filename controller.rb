@@ -22,16 +22,16 @@ set :public_folder, File.dirname(__FILE__) + '/assets/'
 enable :partial_underscores
 
 # Email
-set :email_username, ENV['SENDGRID_USERNAME'] || ENV['EMAIL_USERNAME']
-set :email_password, ENV['SENDGRID_PASSWORD'] || ENV['EMAIL_PASSWORD']
-set :email_address, settings.email_address
-set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
-set :email_domain, ENV['SENDGRID_DOMAIN'] || 'localhost.localdomain'
-
-# AWS
-set :bucket, ENV['S3_BUCKET_NAME'] || settings.s3_bucket
-set :s3_key, ENV['AWS_ACCESS_KEY_ID'] || settings.s3_key
-set :s3_secret, ENV['AWS_SECRET_ACCESS_KEY'] || settings.s3_secret
+#set :email_username, ENV['SENDGRID_USERNAME'] || ENV['EMAIL_USERNAME']
+#set :email_password, ENV['SENDGRID_PASSWORD'] || ENV['EMAIL_PASSWORD']
+#set :email_address, 'me@email.com"
+#set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
+#set :email_domain, ENV['SENDGRID_DOMAIN'] || 'localhost.localdomain'
+#
+## AWS
+#set :bucket, ENV['S3_BUCKET_NAME'] || nil
+#set :s3_key, ENV['AWS_ACCESS_KEY_ID'] || nil
+#set :s3_secret, ENV['AWS_SECRET_ACCESS_KEY'] || nil
 
 class MyApp < Sinatra::Base
   register Sinatra::R18n
@@ -103,7 +103,7 @@ post '/contact' do
   else
     Pony.mail(
       :from => params[:name] + "<" + params[:email] + ">",
-      :to => 'info@jonlaing.com',
+      :to => settings.email_address
       :subject => params[:name] + " has contacted you",
       :body => [params[:name],params[:email],params[:company],params[:phone],"",params[:message]].join("\n\n"),
       :port => '587',
@@ -131,10 +131,7 @@ helpers do
     "<a href=\"#{where}\" #{options}>#{text}</a>"
   end
 
-  def email_address(link,address)
-    html = "<a href=\"mailto:#{address}\">#{link}</a>"
-
-    "<script type=\"text/javascript\">document.write(String.fromCharCode(#{html.bytes.to_a.join(',')}));</script>"
+  def global_setting(name)
   end
 
   def get_width(img, desired_height)

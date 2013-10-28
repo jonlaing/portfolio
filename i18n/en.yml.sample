@@ -1,7 +1,7 @@
 global:
   title: "My Super Portfolio Site"
-  description: "Jon Laing is a contemporary illustrator living in Brooklyn, NY. His art wants to get it on with your eyeballs. Don't play hard to get, now."
-  keywords: "illustration, jon, laing, freelance, brooklyn, super, hero, dad"
+  description: "Holy cow it's super stuff."
+  keywords: "my, really, cool, portfolio"
   copyright: "&copy; 2013. All rights reserved."
   sociallinks:
     - "[Tumblr]()"
@@ -9,8 +9,8 @@ global:
     - "[Facebook]()"
     - "[LinkedIn]()"
   blogurl: "http://tumblr.com"
-  google_analytics_acct: 'UA-6183828-1'
-  store_link: "http://society6.com/JonLaing/prints"
+  google_analytics_acct: 'UA-XXXXXX-X'
+  store_link: ""
 
 index:
   title: "Portfolio"

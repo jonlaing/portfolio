@@ -1,6 +1,7 @@
 email_address:  'you@email.com'
 email_service:  'gmail.com'
 email_domain:   'localhost.localdomain'
-s3_bucket:      'bucket'
+
+bucket:      'bucket'
 s3_key:         'KEYKEYKEYKEY'
 s3_secret:      'secretsecretsecretti'
