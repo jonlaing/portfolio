@@ -6,6 +6,7 @@ require 'haml'
 require 'open-uri'
 require 'sinatra/rdiscount'
 require 'sinatra/partial'
+require 'sinatra/config_file'
 require 'exifr'
 require 'aws/s3'
 
@@ -15,20 +16,22 @@ include AWS::S3
 #              Configuration                #
 #############################################
 
+config_file 'config.yml'
+
 set :public_folder, File.dirname(__FILE__) + '/assets/'
 enable :partial_underscores
 
 # Email
 set :email_username, ENV['SENDGRID_USERNAME'] || ENV['EMAIL_USERNAME']
 set :email_password, ENV['SENDGRID_PASSWORD'] || ENV['EMAIL_PASSWORD']
-set :email_address, 'info@jonlaing.com'
+set :email_address, settings.email_address
 set :email_service, ENV['EMAIL_SERVICE'] || 'gmail.com'
 set :email_domain, ENV['SENDGRID_DOMAIN'] || 'localhost.localdomain'
 
 # AWS
-set :bucket, ENV['S3_BUCKET_NAME'] || nil
-set :s3_key, ENV['AWS_ACCESS_KEY_ID'] || nil
-set :s3_secret, ENV['AWS_SECRET_ACCESS_KEY'] || nil
+set :bucket, ENV['S3_BUCKET_NAME'] || settings.s3_bucket
+set :s3_key, ENV['AWS_ACCESS_KEY_ID'] || settings.s3_key
+set :s3_secret, ENV['AWS_SECRET_ACCESS_KEY'] || settings.s3_secret
 
 class MyApp < Sinatra::Base
   register Sinatra::R18n
